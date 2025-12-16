@@ -1,0 +1,1246 @@
+<!--
+  Built with ❤️ by Soumyadeep Das
+  GitHub: https://github.com/Soumyadeep765
+  Repo: https://github.com/Soumyadeep765/portfolio
+  If you’re using this portfolio as a base, keeping this credit is appreciated.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soumyadeep Das – Backend & Telegram Bot Developer</title>
+    <meta name="description" content="Backend developer specializing in Telegram bots, scalable systems, and automation infrastructure.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #000000;
+            --fg: #ffffff;
+            --gray: #666666;
+            --border: #333333;
+            --accent: #ffffff;
+            --node: #339933;
+            --python: #3776ab;
+            --php: #777bb4;
+            --js: #f7df1e;
+            --postgres: #336791;
+            --mongodb: #47a248;
+            --redis: #d82c20;
+            --mysql: #4479a1;
+            --linux: #fcc624;
+            --docker: #2496ed;
+            --aws: #ff9900;
+     --nginx: #009639;
+            --telegram: #26a5e4;
+            --scraping: #e34c26;
+            --react: #61dafb;
+            --go: #00add8;
+            --kubernetes: #326ce5;
+             --html: #e34f26;
+            --css: #1572b6;
+    --sqlite: #003b57;
+    --telegram-webapp: #0088cc;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            font-size: 14px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection {
+            background: var(--fg);
+            color: var(--bg);
+        }
+
+        a {
+            color: var(--fg);
+            text-decoration: none;
+            border-bottom: 1px solid var(--fg);
+            transition: opacity 0.2s;
+        }
+
+        a:hover {
+            opacity: 0.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            letter-spacing: -1px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--gray);
+            margin-bottom: 40px;
+            letter-spacing: 0.5px;
+        }
+
+        .intro {
+            font-size: 16px;
+            max-width: 700px;
+            margin-bottom: 50px;
+            line-height: 1.8;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border: 1px solid var(--fg);
+            background: transparent;
+            color: var(--fg);
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            transition: all 0.2s;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--fg);
+            transition: left 0.3s;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            left: 0;
+        }
+
+        .btn:hover {
+            color: var(--bg);
+            border-bottom: 1px solid var(--fg);
+            opacity: 1;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 14px 28px;
+            border: 1px solid var(--fg);
+            background: var(--fg);
+            color: var(--bg);
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            transition: all 0.2s;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg);
+            transition: left 0.3s;
+            z-index: -1;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            color: var(--fg);
+            background: transparent;
+            border-bottom: 1px solid var(--fg);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .skill-item h3 {
+            margin-bottom: 12px;
+        }
+
+        .skill-item p {
+            color: var(--gray);
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* Technologies Section Styles */
+        .tech-category {
+            margin-bottom: 60px;
+        }
+
+        .tech-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .tech-category h3 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tech-category h3 i {
+            font-size: 20px;
+        }
+
+        .tech-level {
+            margin-bottom: 40px;
+        }
+
+        .tech-level h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tech-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .tech-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .tech-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .tech-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 20px;
+            border-radius: 6px;
+        }
+
+/* Technology-specific icon colors */
+.tech-node { color: var(--node); }
+.tech-python { color: var(--python); }
+.tech-js { color: var(--js); background: #333; padding: 0 5px; border-radius: 4px; }
+.tech-html { color: var(--html); }
+.tech-css { color: var(--css); }
+.tech-mongodb { color: var(--mongodb); }
+.tech-redis { color: var(--redis); }
+.tech-mysql { color: var(--mysql); }
+.tech-sqlite { color: var(--sqlite); }
+.tech-linux { color: var(--linux); }
+.tech-docker { color: var(--docker); }
+.tech-aws { color: var(--aws); }
+.tech-nginx { color: var(--nginx); }
+.tech-telegram { color: var(--telegram); }
+.tech-telegram-webapp { color: var(--telegram-webapp); }
+.tech-scraping { color: var(--scraping); }
+.tech-api { color: var(--accent); }
+.tech-automation { color: #ff6b6b; }
+.tech-react { color: var(--react); }
+        .tech-info {
+            flex: 1;
+        }
+
+        .tech-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .tech-experience {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        .experience-bar {
+            height: 4px;
+            background: var(--border);
+            margin-top: 8px;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .experience-fill {
+            height: 100%;
+            border-radius: 2px;
+            transition: width 1s ease-in-out;
+        }
+
+        /*pr level*/
+        .expert { width: 95%; }
+        .advanced { width: 85%; }
+        .intermediate { width: 70%; }
+        .learning { width: 50%; }
+.skilled { width: 70%; }
+.good { width: 65%; }
+.starter { width: 40%; }
+        /*yooltip*/
+        .tech-item {
+            position: relative;
+        }
+
+        .tech-item:hover .tech-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .tech-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            background: var(--fg);
+            color: var(--bg);
+            padding: 8px 12px;
+            font-size: 12px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 100;
+            white-space: nowrap;
+        }
+
+        .tech-tooltip:after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 20px;
+            border: 6px solid transparent;
+            border-top-color: var(--fg);
+        }
+
+        .projects-grid {
+            display: grid;
+            gap: 60px;
+            margin-top: 60px;
+        }
+
+        .project {
+            border: 1px solid var(--border);
+            padding: 40px;
+        }
+
+        .project h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .project-desc {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .project-tech {
+            margin-bottom: 24px;
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        .project-tech span {
+            color: var(--fg);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .project-links a {
+            font-size: 13px;
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .proof-item {
+            border-left: 2px solid var(--fg);
+            padding-left: 20px;
+        }
+
+        .proof-number {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .proof-label {
+            color: var(--gray);
+            font-size: 13px;
+        }
+
+        .cta-section {
+            text-align: left;
+        }
+
+        .cta-section h2 {
+            font-size: 48px;
+            margin-bottom: 30px;
+            max-width: 700px;
+        }
+
+        .cta-section p {
+            color: var(--gray);
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        footer {
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            font-size: 13px;
+            border-bottom: none;
+        }
+        .ascii-art {
+            overflow-x: auto;
+            max-width: 100%;
+            font-size: 14px;
+            line-height: 1.1;
+            color: green;
+            margin-bottom: 30px;
+            white-space: pre;
+            font-family: monospace;
+        }
+        
+        .footer-msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0 0 0;
+      }
+      .footer-msg a{
+          font-family: 'VT323', monospace;
+          font-size: 20px;
+      }
+
+        .cursor-sh {
+            display: inline-block;
+            animation: blink 1s steps(1) infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            50.01%, 100% { opacity: 0; }
+        }
+
+        .typing {
+            white-space: nowrap;
+        }
+
+        .cursor {
+            display: inline-block;
+            margin-left: 2px;
+            animation: blink 1s steps(1) infinite;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+            section:first-of-type{
+                padding: 10px 0 40px 0;
+            }
+
+            .skills-grid,
+            .proof-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project {
+                padding: 30px 20px;
+            }
+
+            .cta-section h2 {
+                font-size: 32px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .tech-items {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-category h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="hero">
+        <div class="container">
+            <div class="ascii-art">
+┌────────────────────────┐
+│ $ whoami<span class="cursor-sh">_</span>                   │
+└────────────────────────┘
+</div>
+<h3>Hello, I'm</h3>
+<h1 class="typing">
+    <span id="text"></span><span class="cursor">|</span>
+</h1>
+            <div class="subtitle">Developer • Systems Builder • Automation Engineer</div>
+            <div class="intro">
+                I build backend systems that handle load without breaking. My work focuses on Telegram bots, API infrastructure, automation pipelines, and deployment architectures that run reliably under real-world conditions. I write code that solves actual problems, not theoretical ones.
+            </div>
+            <div class="btn-group">
+                <a href="#technologies" class="btn btn-primary">View Tech Stack</a>
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn">Contact</a>
+            </div>
+        </div>
+    </section>
+
+<section id="technologies">
+    <div class="container">
+        <h2>Tech Stack</h2>
+        
+        <div class="tech-category">
+            <h3>Languages & Frameworks</h3>
+            
+            <div class="tech-level">
+                <h4>Advanced</h4>
+                <div class="tech-items">
+                    <div class="tech-item">
+                        <div class="tech-icon tech-node">
+                            <i class="fab fa-node-js"></i>
+                        </div>
+                        <div class="tech-info">
+                            <div class="tech-name">Node.js</div>
+                            <div class="tech-experience">2+ years, production systems</div>
+                            <div class="experience-bar">
+                                <div class="experience-fill advanced" style="background: var(--node);"></div>
+                            </div>
+                            <div class="tech-tooltip">Express.js, REST APIs, WebSockets</div>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon tech-js">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                        <div class="tech-info">
+                            <div class="tech-name">JavaScript</div>
+                            <div class="tech-experience">2+ years, full-stack development</div>
+                            <div class="experience-bar">
+                                <div class="experience-fill advanced" style="background: var(--js);"></div>
+                            </div>
+                            <div class="tech-tooltip">ES6+, Async programming, Web APIs</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-level">
+                <h4>Intermediate</h4>
+                <div class="tech-items">
+                    <div class="tech-item">
+                        <div class="tech-icon tech-html">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <div class="tech-info">
+                            <div class="tech-name">HTML5</div>
+                            <div class="tech-experience">Semantic markup, modern standards</div>
+                            <div class="experience-bar">
+                                <div class="experience-fill intermediate" style="background: var(--html);"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon tech-css">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <div class="tech-info">
+                            <div class="tech-name">CSS3</div>
+                            <div class="tech-experience">Flexbox, Grid, responsive design</div>
+                            <div class="experience-bar">
+                                <div class="experience-fill intermediate" style="background: var(--css);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-level">
+                <h4>Learning</h4>
+                <div class="tech-items">
+                    <div class="tech-item">
+                        <div class="tech-icon tech-react">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="tech-info">
+                            <div class="tech-name">React.js</div>
+                            <div class="tech-experience">Learning, component-based development</div>
+                            <div class="experience-bar">
+                                <div class="experience-fill learning" style="background: var(--react);"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon tech-python">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="tech-info">
+                            <div class="tech-name">Python</div>
+                            <div class="tech-experience">Learning, scripting & automation</div>
+                            <div class="experience-bar">
+                                <div class="experience-fill learning" style="background: var(--python);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tech-category">
+            <h3>Databases & Caching</h3>
+            <div class="tech-items">
+                <div class="tech-item">
+                    <div class="tech-icon tech-mysql">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="tech-info">
+                        <div class="tech-name">MySQL</div>
+                        <div class="tech-experience">Skilled, relational databases</div>
+                        <div class="experience-bar">
+                            <div class="experience-fill skilled" style="background: var(--mysql);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon tech-mongodb">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="tech-info">
+                        <div class="tech-name">MongoDB</div>
+                        <div class="tech-experience">Intermediate, NoSQL solutions</div>
+                        <div class="experience-bar">
+                            <div class="experience-fill intermediate" style="background: var(--mongodb);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon tech-redis">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="tech-info">
+                        <div class="tech-name">Redis</div>
+                        <div class="tech-experience">Intermediate, caching & sessions</div>
+                        <div class="experience-bar">
+                            <div class="experience-fill intermediate" style="background: var(--redis);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon tech-sqlite">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="tech-info">
+                        <div class="tech-name">SQLite</div>
+                        <div class="tech-experience">Learning, embedded databases</div>
+                        <div class="experience-bar">
+                            <div class="experience-fill learning" style="background: var(--sqlite);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tech-category">
+            <h3>Infrastructure & DevOps</h3>
+            <div class="tech-items">
+                <div class="tech-item">
+                    <div class="tech-icon tech-linux">
+                        <i class="fab fa-linux"></i>
+                    </div>
+                    <div class="tech-info">
+                        <div class="tech-name">Linux/Unix</div>
+                        <div class="tech-experience">Good knowledge, server administration</div>
+                        <div class="experience-bar">
+                            <div class="experience-fill good" style="background: var(--linux);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon tech-docker">
+                        <i class="fab fa-docker"></i>
+                    </div>
+                    <div class="tech-info">
+                        <div class="tech-name">Docker</div>
+                        <div class="tech-experience">Learning, containerization</div>
+                        <div class="experience-bar">
+                            <div class="experience-fill learning" style="background: var(--docker);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon tech-aws">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <div class="tech-info">
+                        <div class="tech-name">AWS</div>
+                        <div class="tech-experience">Starter, cloud services</div>
+                        <div class="experience-bar">
+                            <div class="experience-fill starter" style="background: var(--aws);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon tech-nginx">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="tech-info">
+                        <div class="tech-name">Nginx</div>
+                        <div class="tech-experience">Learning, reverse proxy & load balancing</div>
+                        <div class="experience-bar">
+                            <div class="experience-fill learning" style="background: var(--nginx);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tech-category">
+            <h3>Specialized Technologies</h3>
+            <div class="tech-items">
+                <div class="tech-item">
+                    <div class="tech-icon tech-telegram">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <div class="tech-info">
+                        <div class="tech-name">Telegram Bot API</div>
+                        <div class="tech-experience">Expert, 40+ bots deployed</div>
+                        <div class="experience-bar">
+                            <div class="experience-fill expert" style="background: var(--telegram);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon tech-telegram-webapp">
+                        <i class="fab fa-telegram"></i>
+                </div>
+                    <div class="tech-info">
+                        <div class="tech-name">Telegram WebApp</div>
+                        <div class="tech-experience">Advanced, bot integration & mini-apps</div>
+                        <div class="experience-bar">
+                            <div class="experience-fill advanced" style="background: var(--telegram-webapp);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon tech-scraping">
+                        <i class="fas fa-spider"></i>
+                    </div>
+                    <div class="tech-info">
+                        <div class="tech-name">Web Scraping</div>
+                        <div class="tech-experience">Advanced, BeautifulSoup, Scrapy</div>
+                        <div class="experience-bar">
+                            <div class="experience-fill advanced" style="background: var(--scraping);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon tech-api">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <div class="tech-info">
+                        <div class="tech-name">API Development</div>
+                        <div class="tech-experience">Expert, REST & WebSocket APIs</div>
+                        <div class="experience-bar">
+                            <div class="experience-fill expert" style="background: var(--accent);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon tech-automation">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="tech-info">
+                        <div class="tech-name">Automation Scripts</div>
+                        <div class="tech-experience">Advanced, Cron jobs & scheduled tasks</div>
+                        <div class="experience-bar">
+                            <div class="experience-fill advanced" style="background: #ff6b6b;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tech-category">
+            <h3>Currently Learning</h3>
+            <div class="tech-items">
+                <div class="tech-item">
+                    <div class="tech-icon tech-react">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="tech-info">
+                        <div class="tech-name">React.js</div>
+                        <div class="tech-experience">Learning, frontend development</div>
+                        <div class="experience-bar">
+                            <div class="experience-fill learning" style="background: var(--react);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon tech-python">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="tech-info">
+                        <div class="tech-name">Python</div>
+                        <div class="tech-experience">Learning, scripting & automation</div>
+                        <div class="experience-bar">
+                            <div class="experience-fill learning" style="background: var(--python);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon tech-docker">
+                        <i class="fab fa-docker"></i>
+                    </div>
+                    <div class="tech-info">
+                        <div class="tech-name">Docker</div>
+                        <div class="tech-experience">Learning, containerization</div>
+                        <div class="experience-bar">
+                            <div class="experience-fill learning" style="background: var(--docker);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon tech-nginx">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="tech-info">
+                        <div class="tech-name">Nginx</div>
+                        <div class="tech-experience">Learning, web server configuration</div>
+                        <div class="experience-bar">
+                            <div class="experience-fill learning" style="background: var(--nginx);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="expertise">
+    <div class="container">
+        <h2>What I Build <span><^_^></span></h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-item">
+                <h3>Telegram Bot Systems</h3>
+                <p>
+                    End-to-end Telegram bot development including command handling,
+                    inline keyboards, callback queries, payments, webhooks,
+                    admin controls, broadcasts, and analytics.
+                    Designed for high traffic and long-running uptime.
+                </p>
+            </div>
+
+            <div class="skill-item">
+                <h3>Backend APIs & Databases</h3>
+                <p>
+                    Scalable REST and real-time APIs with structured data models.
+                    Hands-on with PostgreSQL, MySQL, MongoDB, Redis,
+                    connection pooling, migrations, and data consistency.
+                </p>
+            </div>
+
+            <div class="skill-item">
+                <h3>Automation & Scraping Pipelines</h3>
+                <p>
+                    Automated data extraction, scheduled jobs, workers,
+                    queue-based processing, and retry-safe pipelines.
+                    Built to run unattended with proper error handling.
+                </p>
+            </div>
+
+            <div class="skill-item">
+                <h3>Cloud, VPS & Linux</h3>
+                <p>
+                    Linux server management, deployment automation,
+                    reverse proxies, SSL, cron jobs, logging, and monitoring.
+                    Experience with cloud providers and bare-metal servers.
+                </p>
+            </div>
+
+            <div class="skill-item">
+                <h3>High-Performance Systems</h3>
+                <p>
+                    Performance tuning at application and database level.
+                    Caching strategies, load testing, memory optimization,
+                    and reducing response latency under heavy load.
+                </p>
+            </div>
+
+            <div class="skill-item">
+                <h3>Security-Aware Development</h3>
+                <p>
+                    Secure-by-design systems with input validation,
+                    authentication, authorization "rate limiting",
+                    token safety, and abuse prevention in mind.
+                </p>
+            </div>
+
+            <div class="skill-item">
+                <h3>Scalable Broadcast & Messaging Systems</h3>
+                <p>
+                    Large-scale broadcast systems capable of handling
+                    millions of users across multiple bots.
+                    Optimized for speed, retries, and Telegram limits.
+                </p>
+            </div>
+
+            <div class="skill-item">
+                <h3>System Architecture & Design</h3>
+                <p>
+                    Designing maintainable architectures with clear separation
+                    of concerns, modular codebases, and future scalability.
+                    Focused on clean, readable, production-ready systems.
+                </p>
+            </div>
+
+            <div class="skill-item">
+                <h3>Developer Tooling & Internal APIs</h3>
+                <p>
+                    Building internal dashboards, admin panels,
+                    logging tools, and developer-friendly APIs
+                    to simplify operations and debugging.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section id="projects">
+    <div class="container">
+        <h2>Selected Projects</h2>
+        
+        <div class="projects-grid">
+            
+            <div class="project">
+                <h3>TeleBotHost</h3>
+                <p class="project-desc">
+                    A multi-tenant Telegram bot hosting platform providing fast execution
+                    environments, isolated runtimes, resource monitoring,
+                    and an automated deployment pipeline for production bots.
+                </p>
+                <p class="project-tech">
+                    Tech: <span>Node.js, MongoDB, Redis, PM2</span>
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/telebothost/">GitHub</a>
+                </div>
+            </div>
+            
+            <div class="project">
+                <h3>Telegram Docs Search Bot</h3>
+                <p class="project-desc">
+                    Intelligent Telegram bot that instantly searches and retrieves
+                    developer documentation using keyword indexing,
+                    full-text search, and smart result ranking for fast queries.
+                </p>
+                <p class="project-tech">
+                    Tech:
+                    <span>Python (Flask), Telegram Bot API, SQLite, Full-Text Search, Redis, Web Scraping</span>
+                </p>
+                <div class="project-links">
+                    <a href="https://t.me/TgDocsXBot">Live Bot</a>
+                </div>
+            </div>
+            
+            <div class="project">
+                <h3>Spotify Lyrics Fetch API</h3>
+                <p class="project-desc">
+                    Unofficial API that fetches real-time Spotify track lyrics
+                    by extracting metadata, intelligently matching tracks,
+                    and returning synced or plain lyrics with low latency.
+                </p>
+                <p class="project-tech">
+                    Tech: <span>Node.js, Express.js, Spotify Web API, Web Scraping, REST</span>
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/Soumyadeep765/spotify-lyrics" target="_blank">
+                        GitHub
+                    </a>
+                </div>
+            </div>
+            
+            <div class="project">
+                <h3>Telegram Multi-Bot Broadcast System</h3>
+                <p class="project-desc">
+                    Large-scale broadcast system capable of delivering messages
+                    through multiple Telegram bots to millions of users,
+                    with batching, rate-limit handling, retries,
+                    and reliable delivery guarantees.
+                </p>
+                <p class="project-tech">
+                    Tech: <span>PHP, Node.js, SQL, Telegram Bot API</span>
+                </p>
+                <div class="project-links">
+                    <span>Private Project</span>
+                </div>
+            </div>
+            
+            <div class="project">
+                <h3>Spotify Song Downloader Web</h3>
+                <p class="project-desc">
+                    Web application that accepts Spotify track links,
+                    extracts song metadata using Spotify APIs,
+                    and locates downloadable audio via scraping techniques.
+                </p>
+                <p class="project-tech">
+                    Tech: <span>Node.js, Spotify API, Web Scraping, HTML, CSS, JavaScript</span>
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/Soumyadeep765/Spotify-down" target="_blank">
+                        GitHub
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+    <section id="proof">
+        <div class="container">
+            <h2>Production Experience</h2>
+            <div class="proof-grid">
+                <div class="proof-item">
+                    <div class="proof-number">40+</div>
+                    <div class="proof-label">Bots, services, APIs deployed and maintained</div>
+                </div>
+                <div class="proof-item">
+                    <div class="proof-number">2M+</div>
+                    <div class="proof-label">API requests handled daily</div>
+                </div>
+                <div class="proof-item">
+                    <div class="proof-number">99.7%</div>
+                    <div class="proof-label">Average uptime across services</div>
+                </div>
+                <div class="proof-item">
+                    <div class="proof-number">180+</div>
+                    <div class="proof-label">Days of continuous operation</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <h2>Have a project in mind?</h2>
+            <p>I work on backend systems, automation infrastructure, and Telegram bot development. If you need reliable engineering work, reach out.</p>
+            <a href="https://t.me/onDNDbro" target="_blank" class="btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>Soumyadeep Das</div>
+                <div class="footer-links">
+                    <a href="mailto:soumyadeepdas765@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                    <a href="https://t.me/onDndBro" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
+                    <a href="https://github.com/soumyadeep765" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+                        <div class="footer-msg">
+        <!-- if anyone copying this pls don't remove the credit -->
+             <p>Buid with <i class="fas fa-heart" style="color: red"></i> by <a href="https://github.com/soumyadeep765">Soumyadeep Das</a></p>
+                </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        document.querySelector('#hero').style.opacity = '1';
+        document.querySelector('#hero').style.transform = 'translateY(0)';
+
+   
+    const progressBars = document.querySelectorAll('.experience-fill');
+        const progressObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const fill = entry.target;
+                    const width = fill.classList.contains('expert') ? '95%' :
+                                 fill.classList.contains('advanced') ? '85%' :
+                                 fill.classList.contains('intermediate') ? '70%' : '50%';
+                    fill.style.width = width;
+                }
+            });
+        }, { threshold: 0.5 });
+
+        progressBars.forEach(bar => {
+            bar.style.width = '0%';
+            progressObserver.observe(bar);
+        })
+        
+ document.querySelectorAll('.tech-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.borderColor = 'var(--accent)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.borderColor = 'var(--border)';
+            });
+        });
+    </script>
+
+    <script>
+        const text = "Soumyadeep Das";
+        const speed = 90;
+        let i = 0;
+        const el = document.getElementById("text");
+
+        (function type() {
+            if (i <= text.length) {
+                el.textContent = text.slice(0, i++);
+                setTimeout(type, speed);
+            }
+        })();
+    </script>
+</body>
+</html>
